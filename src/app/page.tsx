@@ -8,6 +8,9 @@ export default function Home() {
     
     <div>
       <NavBar/>
+      <div>
+        “The thing that you can control is your thoughts”
+      </div>
       <ABOUT_ME/>
     </div>
   )
