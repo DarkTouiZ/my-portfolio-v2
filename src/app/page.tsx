@@ -1,17 +1,17 @@
-import Image from 'next/image'
-import {Button} from '@nextui-org/button'; 
-import NavBar from '../../component/navbar';
-import ABOUT_ME from '../../component/about_me';
+import NavBar from "../../component/navbar";
+import ABOUT_ME from "../../component/about_me";
 
 export default function Home() {
   return (
-    
     <div>
-      <NavBar/>
-      <div>
-        “The thing that you can control is your thoughts”
+      <NavBar />
+      <div className="m-5 p-3">
+        <h1>
+          “The thing that <span className="text-bold">you</span> can control is
+          your thoughts”
+        </h1>
       </div>
-      <ABOUT_ME/>
+      <ABOUT_ME />
     </div>
-  )
+  );
 }
