@@ -1,68 +1,47 @@
-import React from "react";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  Link,
-  Button,
-} from "@nextui-org/react";
+import { Link } from "@nextui-org/react";
+import { profile } from "./portfolio-data";
 
-
+const navItems = [
+  { label: "About", href: "#about" },
+  { label: "Work", href: "#work" },
+  { label: "Stack", href: "#stack" },
+  { label: "Contact", href: "#contact" },
+];
 
 export default function NavBar() {
   return (
-    <Navbar
-      shouldHideOnScroll
-      classNames={{
-        item: [
-          "flex",
-          "relative",
-          "h-full",
-          "items-center",
-          "data-[active=true]:after:content-['']",
-          "data-[active=true]:after:absolute",
-          "data-[active=true]:after:bottom-0",
-          "data-[active=true]:after:left-0",
-          "data-[active=true]:after:right-0",
-          "data-[active=true]:after:h-[2px]",
-          "data-[active=true]:after:rounded-[2px]",
-          "data-[active=true]:after:bg-primary",
-        ],
-      }}
-    >
-      <NavbarBrand>
-        <img
-          src="https://scontent.fbkk4-2.fna.fbcdn.net/v/t39.30808-6/293275629_338607041814474_253596453142259628_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHDfL016eYn05ISANplSo80RQ9HLD2ygntFD0csPbKCe8-xHNgbehkx5E14IyjPBgMG3gcn70u89V2jORcZ0x_8&_nc_ohc=GS7B0lgQEAQAX8hhDGf&_nc_zt=23&_nc_ht=scontent.fbkk4-2.fna&oh=00_AfAysn2LRZstHq20A_J047B89Wi61JPqRyN6GrAgv4XBQg&oe=6549FDC1"
-          alt="Adisorn Picture"
-          width="50"
-          height="50"
-          className="mx-1 p-1 rounded-full"
-        ></img>
-        <h1 className="gap-4 font-bold text-inherit">ADISORN</h1>
-      </NavbarBrand>
-      <NavbarContent className="sm:flex gap-4" justify="end">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            ABOUT ME
-          </Link>
-        </NavbarItem>
-        <NavbarItem >
-          <Link color="foreground" href="#">
-            CONTACTS
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            EDUCATIONS
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            SKILLS
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-    </Navbar>
+    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl">
+      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
+        <a href="#" className="flex items-center gap-3" aria-label="Go to top">
+          <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-950 text-sm font-semibold text-white">
+            AP
+          </span>
+          <span className="leading-tight">
+            <span className="block text-sm font-semibold text-slate-950">{profile.name}</span>
+            <span className="block text-xs text-slate-500">@{profile.handle}</span>
+          </span>
+        </a>
+
+        <div className="hidden items-center gap-6 md:flex">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-950"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+
+        <Link
+          href={profile.github}
+          isExternal
+          className="rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-800 transition-colors hover:border-slate-950 hover:text-slate-950"
+        >
+          GitHub
+        </Link>
+      </nav>
+    </header>
   );
 }
