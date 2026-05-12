@@ -9,6 +9,7 @@ export const profile = {
   github: "https://github.com/DarkTouiZ",
   linkedin: "https://www.linkedin.com/in/adisornparama/",
   kaggle: "https://www.kaggle.com/exceptionz",
+  photo: "/adisorn-super-ai.jpeg",
 };
 
 export const focusAreas = [

@@ -36,7 +36,29 @@ body {
   }
 
   .hero-panel {
-    @apply rounded-lg border border-slate-200 bg-slate-100 p-6 shadow-sm;
+    @apply rounded-lg border border-slate-200 bg-slate-100 p-4 shadow-sm;
+  }
+
+  .profile-photo-frame {
+    @apply relative overflow-hidden rounded-lg bg-slate-200 shadow-sm ring-1 ring-slate-200;
+    aspect-ratio: 4 / 5;
+  }
+
+  .profile-photo {
+    @apply h-full w-full object-cover;
+    object-position: center 28%;
+  }
+
+  .photo-caption {
+    @apply absolute inset-x-4 bottom-4 rounded-lg bg-slate-950/80 p-4 text-white shadow-lg backdrop-blur-md;
+  }
+
+  .photo-caption span {
+    @apply block text-xs font-semibold uppercase tracking-[0.2em] text-teal-200;
+  }
+
+  .photo-caption strong {
+    @apply mt-1 block text-lg font-semibold;
   }
 
   .section-band {

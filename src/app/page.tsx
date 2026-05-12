@@ -1,3 +1,4 @@
+import Image from "next/image";
 import NavBar from "../../component/navbar";
 import {
   buildingPrinciples,
@@ -39,18 +40,22 @@ export default function Home() {
         </div>
 
         <aside className="hero-panel">
-          <div className="flex items-start justify-between gap-6">
-            <div>
-              <p className="text-sm font-medium text-slate-500">Profile</p>
-              <h2 className="mt-2 text-2xl font-semibold text-slate-950">{profile.name}</h2>
-              <p className="mt-1 text-sm text-slate-500">@{profile.handle}</p>
-            </div>
-            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-slate-950 text-base font-semibold text-white">
-              AP
+          <div className="profile-photo-frame">
+            <Image
+              src={profile.photo}
+              alt="Adisorn Parama at Super AI Engineer Season 6"
+              fill
+              priority
+              sizes="(min-width: 1024px) 460px, 100vw"
+              className="profile-photo"
+            />
+            <div className="photo-caption">
+              <span>Super AI Engineer Season 6</span>
+              <strong>{profile.name}</strong>
             </div>
           </div>
 
-          <div className="mt-8 grid gap-3">
+          <div className="mt-5 grid gap-3">
             {[
               "Embedded systems",
               "FPGA / HDL",
