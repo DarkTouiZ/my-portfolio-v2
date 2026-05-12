@@ -43,14 +43,13 @@ export default function Home() {
           <div className="profile-photo-frame">
             <Image
               src={profile.photo}
-              alt="Adisorn Parama at Super AI Engineer Season 6"
+              alt="Adisorn Parama portfolio photo"
               fill
               priority
               sizes="(min-width: 1024px) 460px, 100vw"
               className="profile-photo"
             />
             <div className="photo-caption">
-              <span>Super AI Engineer Season 6</span>
               <strong>{profile.name}</strong>
             </div>
           </div>
